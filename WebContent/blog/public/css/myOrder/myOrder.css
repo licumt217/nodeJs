@@ -1,0 +1,791 @@
+body{
+	background:#f5f8f9;
+}
+#wrapper{
+	overflow:hidden;
+    padding-bottom: 10em;
+}
+/* 朝阳大悦城活动 */
+.joyCityDiscount{
+	text-align:center;
+    margin-top: -0.5em;
+}
+/*包月订单*/
+.monthOrder{
+    height: auto;
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 1.2em;
+    position:relative;
+    /*box-shadow: 1px 1px 1px #e0e0e0;
+    background: #ffffff;
+    border:1px solid #E0E0E0;
+    border-radius:15px;*/
+    background: url("/images/myOrder/list_order_monthly.png");
+    background-size: 100% 100%;
+}
+.month_carnumber{
+    height: 3.5em;
+    width: 100%;
+  /*  background: #febc4b;*/
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #966813;
+    line-height: 2.5em;
+}
+.month_parking{
+    height: 2.5em;
+    color: #333333;
+    font-size: 12.5px;
+    text-align: right;
+    padding-right:1.7em
+}
+.month_main{
+    height: 5em;
+    width: 96%;
+    background: #fff9ed;
+    margin: 0 auto;
+}
+.month_main p{
+    color: #333333;
+    font-size: 12.5px;
+    padding-left:1.2em;
+    line-height: 2.5em;
+}
+.month_main p:nth-child(2) span:nth-child(2){
+    font-size: 27px;
+}
+.month_money{
+    height: 3.2em;
+    line-height: 3.2em;
+    color: #333333;
+    font-size: 12.5px;
+    text-align: right;
+    padding-right:1.7em;
+    padding-bottom: 1em;
+}
+.month_money span{
+    color: #e0a137;
+    font-size: 27px;
+}
+.month_money span:nth-child(2){
+    font-size: 12.5px;
+}
+/*当前订单*/
+.current,.payment_money{
+    width:90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1.2em;
+    background-size:100% 100%;
+    border:1px solid #E0E0E0;
+    border-radius:15px;
+    position:relative;
+    background: #ffffff;
+    box-shadow: 1px 0px 1px #e0e0e0;
+}
+.carnumber{
+    height:40px;
+    width: 9em;
+    background: url("/images/myOrder/list_form_card.png");
+    background-size: 100% 100%;
+    margin: 0 auto 1em auto;
+}
+.carnumber p{
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+}
+.pakking{
+    line-height:2em;
+    float:right;
+    padding-right:1em;
+    font-size: 12.5px;
+    color:#333;
+    display:inline-block;
+}
+.active{
+    color: #eba244!important;
+}
+.con{
+    text-align: center;
+    line-height: 3em;
+    height: 3em;
+    width: 100%;
+}
+.con span{
+    color: #4bc1cd;
+}
+.con a img{
+    margin-top: 0.6em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+@media screen and (max-width: 320px) { 
+.pakking{
+    line-height:1.2em;
+    float:right;
+    padding-right:12px;
+    font-size: 12.5px;
+    color:#333;
+    display:inline-block;
+    width:95px;
+    text-align:center;
+}
+}
+
+.curOrderInTime{
+    line-height:2em;
+    float:left;
+    padding-left:20px;
+    font-size: 12.5px;
+    color:#333;
+    display:inline-block;
+}
+.payment_time{
+	line-height:2em;
+    float:left;
+    padding-left:35px;
+    font-size: 12.5px;
+    color:#333;
+    display:inline-block;
+}
+.current_main{
+	height:100px;
+	width:100%;
+	margin:3em auto 0 auto;
+	background: #ddfffe;
+}
+.current_time{
+    height:80px;
+    text-align: left;
+    color: #333;
+    line-height: 2em;
+    padding-left:5%;
+    padding-top:8px;
+    float:left;
+    font-size:12.5px;
+   
+}
+.current_money{
+	 height:80px;
+     width: 40%;
+     color: #333;
+     line-height: 2em;
+     padding-top:20px;
+     float:right;
+     padding-left: 6%;
+     padding-right: 3%;
+     background:url("/images/myOrder/current_line.png") no-repeat left center;
+     font-size: 12.5px;
+}
+.parkmoney{
+    text-align: right;
+    padding-right: 15%;
+}
+.current_money span{
+	font-size: 27px;
+	color:#fd5958;
+}
+ .lqtime{
+    font-size: 25px;
+    color: #333;
+} 
+.yctcf{
+    height: 3.2em;
+    line-height: 3.2em;
+    background: #fffce3;
+    width: 100%;
+    text-align: center;
+    color: #333333;
+    font-size: 12.5px;
+    padding-bottom:0.5em;
+}
+.yctcf span{
+    font-size: 2.5em;
+    color:#fd5958;
+}
+.couponbd p{
+    line-height:3em;
+    text-align: right;
+    padding-right: 2em;
+    border-bottom: solid 1px #e0e0e0;
+    color: #333;
+    font-size: 12.5px;
+}
+.couponbd p span{
+    color:#fd5958!important;
+    font-size: 25px;
+    padding: 0 5px;
+}
+.UsedCoupon{
+    width: 100%;
+    border-bottom: solid 1px #e0e0e0;
+    /*border-top: solid 1px #E0E0E0;*/
+}
+.activity_text{
+   width: 100%;
+}
+.ad_top_border{
+    border-top: 1px solid #E0E0E0;
+}
+.activity_text p{
+	text-align:center;
+	color:#fd5958;
+    line-height: 40px;
+    height: 40px;
+	font-size: 12.5px
+}
+.middle ol{
+    border-bottom: solid 1px #e0e0e0;
+}
+.middle{
+	height:3em;
+}
+.middle ol li{
+    background: #ffffff;
+    height: 3em;
+    line-height: 3em;
+    color: #333;
+    text-align: center;
+}
+.middle ol span{
+	color:#fd5958;
+}
+
+.zkh{
+	line-height: 3em;
+    height: 3em;
+    text-align: right;
+    padding-right: 1em;
+}
+.zkh span{
+	color:#fd5958;
+	font-size:27px;
+}
+
+.delete_cur_order{
+    position:absolute;
+     right: -4%;
+     top: -1em;
+}
+.delete{
+	position:absolute;
+    right: -1%;
+    top: -0.5em;
+}
+.currentorder,.paymentorder{
+    height: auto;
+    position: absolute;
+    width:70px;
+    left: -2px;
+    top: -3px;
+}
+/* 待还款订单 */
+.paymentmoney_main{
+	height:100px;
+	width:100%;
+	background: #ffebae;
+	margin:3em auto 0 auto;
+}
+
+.paymentmoney_time{
+	height: 90px;
+    text-align: left;
+    color: #333;
+    line-height: 2em;
+    padding-left: 5%;
+    padding-top: 10px;
+    float: left;
+    font-size: 12.5px;
+}
+.paymentmoney_time span{
+	color:#333;
+}
+.paymentmoney_money{
+	  height: 90px;
+	  width: 44%;
+	  color: #333;
+	  line-height: 2em;
+	  padding-top: 10px;
+	  float: right;
+	  padding-left: 4%; 
+      font-size:12.5px;
+      background:url("/images/myOrder/current_line.png") no-repeat left center;
+}
+.ddje{
+	/*color:#fd5958;*/
+    color: #8c6914;
+	font-size:16px;
+}
+.paymentmoney_money h1{
+	font-weight: normal;
+	text-align: right;
+    padding-right: 15%;
+}
+.paymentmoney_money h1 span:first-child{
+    font-size: 27px;
+   /* color:#fd5958;*/
+    color: #8c6914;
+}
+.paymentmoney_money h1 span{
+	font-size:12.5px;
+	color:#333;
+}
+.promptlypay{
+	height: 40px;
+    width: 100%;
+    background-color: #4bc1cd;
+    border-radius: 15px;
+    color: #ffffff;
+    line-height: 42px;
+    font-size: 15px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+.couponybdmain table{
+    border-bottom: solid 1px #e0e0e0;
+    font-size:12.5px;
+	color:#333;
+    width: 100%;
+}
+.couponybdmain td em{
+	color:#fd5958;
+	font-size:18px;
+	margin-right:3px;
+}
+.couponybdmain td img{
+	width: 30px;
+    margin: 15px 10px;
+}
+.couponybdmain table tr td p:nth-child(2){
+	font-size:12.5px;
+	color:#787878; 
+}
+.last_td{ 
+    background: url("/images/myOrder/li.png") no-repeat center right ;
+    }
+/*.current ul li{*/
+	/*font-size:12.5px;*/
+	/*color:#333;*/
+	/*line-height:60px;*/
+	/*height:59px;*/
+    /*background: url("/images/myOrder/li.png") no-repeat center right;*/
+    /*background-size: 3%;*/
+    /*margin-right: 2em;*/
+/*}*/
+
+.rightArrowBase{
+    font-size:12.5px;
+    color:#333;
+    line-height:60px;
+    height:59px;
+    background-size: 3%;
+    margin-right: -0.6em;
+}
+
+.rightArrow{
+    background: url("/images/myOrder/li.png") no-repeat center right;
+    margin-right: 1em;
+}
+
+.current ul li b{
+	text-align:right;
+	padding-right:2em;
+	font-weight:normal;
+	float: right;
+}
+.current ul li b span{
+	color:#fd5958;
+	font-size:18px;
+	padding-right:3px;
+}
+.current ul li img{
+	width: 30px;
+    margin: 20px 10px;
+}
+
+
+.generalBottomInfo{
+	text-align:center;
+	color:#fd5958;
+	line-height: 3em;
+    font-size: 12px;
+}
+.discountPic{
+	    height: 1.4em;
+    padding: 0.8em 0 0 2em;
+}
+/* 开关按钮样式 */
+.cashmoney{
+    padding-left:5%;
+    height: 60px;
+    border-bottom: solid 1px #e0e0e0;
+}
+.cashmoney h1{
+	font-weight:normal;
+	float:left;
+	font-size: 14px;
+    color: #333;
+	line-height: 60px;
+}
+.cashmoney h1 span{
+	color:#787878;
+	font-size:12.5px;
+}
+.onoffswitch {
+            position: relative;
+            width: 60px;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select: none;
+            float:right;
+            -webkit-tap-highlight-color:#fff;
+            margin-top:14px;
+            margin-right: 5%;
+        }
+ .onoffswitch-checkbox {
+            display: none;
+        }
+ .onoffswitch-label {
+            display: block;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid #cccccc;
+            border-radius: 20px;
+        }
+.onoffswitch-inner {
+            width: 200%;
+            margin-left: -100%;
+            -moz-transition: margin 0s ease-in 0s;
+            -webkit-transition: margin 0s ease-in 0s;
+            -o-transition: margin 0s ease-in 0s;
+            transition: margin 0s ease-in 0s;
+        }
+ .onoffswitch-inner > div {
+            float: left;
+            width: 50%;
+            height: 30px;
+            padding: 0;
+            line-height:30px;
+            font-size: 14px;
+            color: white;
+            font-family: Trebuchet, Arial, sans-serif;
+            font-weight: bold;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+.onoffswitch-inner .onoffswitch-active {
+            padding-left: 10px;
+            background-color:#01d69c;
+            color: #FFFFFF;
+        }
+ .onoffswitch-inner .onoffswitch-inactive {
+            padding-right: 10px;
+            background-color: #f2f2f2;
+            color: #999999;
+            text-align: right;
+        }
+ .onoffswitch-switch {
+            width: 30px;
+            height:30px;
+            background: #FFFFFF;
+            border: 1px solid #999999;
+            border-radius: 20px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 27px;
+            -moz-transition: all 0s ease-in 0s;
+            -webkit-transition: all 0s ease-in 0s;
+            -o-transition: all 0s ease-in 0s;
+            transition: all 0s ease-in 0s;
+        }
+ .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+            margin-left: 0;
+        }
+ .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+            right: 0px;
+        }
+ .noHisOrderClass{
+        	text-align: center;
+        	margin-top: 5em
+        }
+ .noCurOrderClass{
+        	text-align: center;
+        	margin-top:65%;
+            display: none;
+        }
+        
+ /* 历史订单 */       
+.historyOrder{
+	width:90%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 1.2em;
+    background:url("/images/myOrder/list_form_bg_history.png") no-repeat;
+    background-size:100% 100%;
+    position:relative;
+}
+.already{
+	width:70px;
+	height: auto;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+}
+.perfect{
+    height: 3px
+}
+.tcjl{
+	line-height:3em;
+	padding-left:5%;
+	font-size:12.5px;
+	color:#787878;
+}
+.historycarnumber{
+    height: 40px;
+    width: 9em;
+    background: url("/images/myOrder/list_order_history_car.png");
+    background-size: 100% 100%;
+    margin: 0 auto 1em auto;
+}
+.carnumberdhk{
+	 height: 40px;
+    width: 9em;
+    background: url("/images/myOrder/list_form_carddhk.png");
+    background-size: 100% 100%;
+    margin: 0 auto 1em auto;
+}
+.historycarnumber p,.carnumberdhk p{
+    line-height: 40px;
+    text-align: center;
+    font-size:15px;
+}
+.history_time{
+	line-height:1em;
+    float:left;
+    padding-left:35px;
+    font-size: 12.5px;
+    color:#787878;
+    display:inline-block;
+}
+.historypakking{
+    line-height:1em;
+    float:right;
+    padding-right:20px;
+    font-size: 12.5px;
+    color:#787878;
+    display:inline-block;
+}
+.history_main{
+	height:100px;
+	width:98%;
+
+	margin:3em auto 0 auto;
+}
+
+.historymain_time{
+    text-align: left;
+    color: #787878;
+    line-height: 2em;
+    padding-left: 5%;
+    padding-top: 5px;
+    float: left;
+    font-size: 12.5px;
+}
+.history_main_money{
+	  height: 90px;
+	  width: 44%;
+	  line-height: 5.5em;
+	  padding-top: 10px;
+	  float: right;
+	  padding-left: 4%; 
+      font-size:12.5px;
+      text-align: center;
+      
+}
+.history_main_money p span:first-child{
+	font-size:27px;
+	color:#fd5958;
+}
+
+.history_main_money p span{
+	 color: #787878;
+	 font-size:12.5px;
+ }
+ #pullUp{
+   text-align:center;
+   line-height:20px;
+   font-size:14px;
+   color:#787878;
+   padding-bottom: 2em;
+ }
+ #pullUp span b{
+     font-weight:normal;
+     color:#4bc1cd!important;
+ }
+ .mainSection{
+ }
+  /*百度新用户送红包*/
+    .bdhb {
+        background: url("/images/myOrder/bdhbbj.png");
+        background-size: 100% 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        display: none;
+    }
+
+.hb_img {
+    bottom: 0;
+    z-index: 999;
+    position: absolute;
+    display: none;
+}
+/*禁用当前订单立即支付按钮的样式*/
+.disableCurOrderPay{
+    height: 40px;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 12.5px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.5px;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+/*
+五月份活动*/
+.activity_div{
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+.activity_switch{
+    height:55px;
+    width:100%;
+    background: #F2DA32;
+}
+.activity_switch tr{
+    height: 55px;
+}
+.activity_switch td{
+    font-size: 14px;
+    vertical-align: middle;
+}
+.activity_switch td:first-child{
+    color:#147e2e;
+    text-align: center;
+}
+.activity_switch td:nth-child(2){
+    color:#afa03c;
+}
+.activity_switch td:nth-child(3){
+    text-align: right;
+}
+/*
+活动开关按钮*/
+.onoffswitch_activity{
+    position: relative;
+    width: 60px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+    float:right;
+    -webkit-tap-highlight-color:#F2DA32;
+    margin-right: 5%;
+}
+.onoffswitch-checkbox_activity {
+    display: none;
+}
+.onoffswitch-label_activity {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+}
+.onoffswitch-inner_activity {
+    width: 200%;
+    margin-left: -100%;
+    -moz-transition: margin 0s ease-in 0s;
+    -webkit-transition: margin 0s ease-in 0s;
+    -o-transition: margin 0s ease-in 0s;
+    transition: margin 0s ease-in 0s;
+}
+.onoffswitch-inner_activity > div {
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height:30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.onoffswitch-inner_activity .onoffswitch-active_activity {
+    padding-left: 10px;
+    background-color:#01d69c;
+    color: #FFFFFF;
+}
+.onoffswitch-inner_activity .onoffswitch-inactive_activity {
+    padding-right: 10px;
+    background-color: #f2f2f2;
+    color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch_activity {
+    width: 30px;
+    height:30px;
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 27px;
+    -moz-transition: all 0s ease-in 0s;
+    -webkit-transition: all 0s ease-in 0s;
+    -o-transition: all 0s ease-in 0s;
+    transition: all 0s ease-in 0s;
+}
+.onoffswitch-checkbox_activity:checked + .onoffswitch-label_activity .onoffswitch-inner_activity{
+    margin-left: 0;
+}
+.onoffswitch-checkbox_activity:checked + .onoffswitch-label_activity .onoffswitch-switch_activity {
+    right: 0;
+}
+
+/*车位停放区域*/
+.parkArea{
+    border-bottom: solid 1px #e0e0e0
+}
+.parkArea > div{
+    line-height: 3em;
+}
+.parkArea > div > img{
+    width: 1.2em;
+    padding: 0.9em 0.2em 0.8em 0.8em
+}
+.parkArea > div > span:last-child{
+    color: red;
+    margin-left: 1em;
+}
+.parkNumber{
+    margin-top:-1.2em;
+}

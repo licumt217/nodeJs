@@ -1,0 +1,103 @@
+@import "reset.css";
+
+body{
+	position:relative;
+}
+.tjd_num_kbd{
+            height: auto;
+            width: 100%;
+            background: #e0e0e0;
+            position: absolute;
+            z-index: 9999;
+            bottom: 48px;
+            border-bottom: solid 1px #e0e0e0;
+            display:none;
+        }
+ .tjd_num_kbd_row{
+            width:100%;
+            height: auto;
+            margin: 0 auto;
+            text-align: center;
+            display: -moz-box;
+            display: -webkit-box;
+
+        }
+.tjd_num_kbd input{
+            border: none;
+            background: none;
+            color: #000;
+            outline: none;
+            height:50px;
+            background: #fcfcfc;
+            margin:0.5px;
+            line-height: 50px;
+            -webkit-box-flex: 1;
+            display: block;
+            font-size: 20px;
+        }
+
+ .carinput input{
+            border: none;
+            background:#ffffff;
+            text-align:center;
+            line-height: 2em;
+            outline: none;
+            margin:1px 0;
+            -webkit-box-flex: 1;
+            display: block;
+            border-right: dashed 1px #cccccc;
+            font-size:18px;
+            color:#000;
+        }
+.active{
+        	border:solid 1px #4ea8b1!important;
+            text-align:center;
+            line-height: 50px;
+            outline: none;
+            -webkit-box-flex: 1;
+            display: block;
+        }
+.tjd_num_kbd_row_btn:active{
+	background: #4EA8B1!important;
+    color: #fff;
+    height: 50px;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #d0cfcf;
+    font-size:14px;
+}
+.tjd_num_kbd_row_bottom_l{
+    height: 50px;
+    line-height: 50px;
+    -webkit-box-flex: 1;
+    display: block;
+    margin: 0.5px;
+    float: left;
+    width: 33.33%;
+}
+
+.tjd_num_kbd_row_bottom{
+    width: 100%;
+    box-sizing: border-box;
+}
+.tjd_num_kbd_row_bottom input{
+    width: 33.33%;
+    float: left;
+}
+
+.tjd_num_kbd_del{
+    width: 33.33%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.tjd_num_kbd_del img{
+    vertical-align: middle;
+    width:2em;
+    text-align: center;
+}
+.tjdNumKbd{
+	ime-mode:inactive;
+}

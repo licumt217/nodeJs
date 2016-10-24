@@ -1,0 +1,19 @@
+{
+  "name": "lispider",
+  "version": "1.0.0",
+  "description": "spider test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "liq"
+  ],
+  "author": "liq",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "request": "^2.75.0"
+  }
+}

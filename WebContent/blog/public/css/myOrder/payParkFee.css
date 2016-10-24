@@ -1,0 +1,140 @@
+body{
+	background:#ededed;
+}
+.orderinfo{
+    width: 100%;
+    height:5em;
+    background:url(../../common/images/huabian.png);
+    background-size:100% 100%;
+}
+.orderinfo ul{
+    line-height: 2em;
+    padding-top: 0.5em;
+    color: #a0a0a0;
+}
+.orderinfo ul li span{
+    color:#787878;
+    margin:0 0 0 10px;
+}
+.couponList{
+	margin-top:20px;
+}
+/*
+手风琴样式*/
+
+.sfqcontent{
+    width: 100%;
+    height: 100%;
+}
+
+.Info{
+    width: 100%;
+    border-top: solid 1px #e0e0e0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    background: #fff;
+   
+}
+.Info dt{
+	 height:60px;
+	 border-bottom: solid 1px #acacac;
+}
+.Info dt span{    
+     line-height: 62px;
+}
+
+.Info dd{
+    background: #f6f6f6;
+    width: 100%;
+    height: auto;
+}
+.Info dd p {
+    line-height: 3.4em;
+    height: 3.4em;
+    border-bottom: solid 1px #e3e1e1;
+    color: #787878;
+    padding-left: 5%;
+}
+.hongbaostatic{
+	color:#fd5958;
+}
+.hongbao{
+	width:40px;
+	padding:11px 0 10px 10px;
+}
+.hongbaotiaozhuanBtn{  
+    float:right;
+    padding-right:3%;
+    padding-top:19px;
+    width:25px;
+}
+.realPayAmount{
+	width: 100%;
+    border-top: solid 1px #e0e0e0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    background: #fff;
+    border-bottom: solid 1px #acacac;
+    line-height:60px;
+    box-shadow: 1px 1px 2px #acacac; 
+    margin-top: 15px; 
+}
+.realPayAmount p{
+	padding-left:10px;
+}
+.sfmoney{
+   color:#4adc4b;
+   font-size:16px;
+}
+.useBalance{
+	/* width: 100%; */
+    border-top: solid 1px #e0e0e0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    background: #fff;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #acacac;
+    line-height:60px;
+    box-shadow: 1px 1px 2px #acacac; 
+    margin-top: 5em; 
+    padding-left:10px;
+}
+.useBalance span{
+    color:#787878;
+    font-size:14px;	
+}
+.currency{
+	padding-left:20px;
+}
+.paymoney{
+	border: none;
+    width: 90%;
+    height:2.5em;
+    line-height: 2.5em;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 5%;
+    outline: none; 
+    background: #4bc1cd;
+    -webkit-user-modify: read-write-plaintext-only;
+}
+.bdorder{
+	float: right;
+	margin-right:3%;
+	padding-top:10px;
+}
+input[type="checkbox"]{
+    opacity: 0;
+}
+input[type="checkbox"]:checked  + label {
+    background: url(../../common/images/checked.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-size: 100% 100%;
+}
+input[type="checkbox"]+ label {
+    background: url(../../common/images/uncheck.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-size: 100% 100%;
+}

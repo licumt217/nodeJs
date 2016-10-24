@@ -1,0 +1,24 @@
+extends ../layout
+block content
+    link(rel="stylesheet" href="/css/login/login.css?v1.0")
+    tjd-modal
+    section#wrapper
+        div.content
+            p 请验证手机让您享受停简单更多服务
+            dl
+                dt
+                    input(type="tel" placeholder="手机号" id="phone" v-on:keyup="validatePhone()" v-model="phone" maxlength="11")
+                dd
+                    span(id="btnCode" v-on:touchend="getYzm($event)"  class="inactive_yzm" v-bind:class="{'inactive_yzm':!isEnableYzm,'active_yzm':isEnableYzm}") 验证
+            p
+                input(type="tel"  placeholder="验证码" onfocus="this.focus()" id="yzm" v-model="yzm" maxlength="6" v-on:keyup="isEnableNextBtn()")
+            input(type="button" value="确定" id="determine" class="determine"  v-on:click="register()")
+            div.citylifeDiv
+                a(href="javascript:go2CityLife();" class="jrcitylife")进入城市生活
+
+    script(src='/js/login/login.js?rev=@@hash1')
+
+
+
+
+
