@@ -20,7 +20,8 @@ var mongoose = require('mongoose');
  * @returns {*|exports|module.exports}
  */
 var getConn=function(ip,dbName){
-    var db=mongoose.connect('mongodb://'+ip+'/'+dbName);
+    mongoose.connect('mongodb://'+ip+'/'+dbName);
+    var db=mongoose.connection;
     db.on('error',console.error.bind(console,'连接mongodb数据库异常'));
     db.once('open', function () {
         console.log('打开数据库连接，数据库名称：'+dbName);

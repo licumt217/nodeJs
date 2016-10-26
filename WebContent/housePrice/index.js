@@ -201,11 +201,59 @@ function findByValue(obj){
         console.log(datas)
     })
 }
+function count(){
+    ChangPingHousePriceModel.count({
+
+    }, function (err,data) {
+        console.log(data)
+    })
+}
 //fetch(getPageUrl(1),1,marginPrice);
 //sendMail();
 //execSchedule();
 //findAll();
-findByValue({
-    price:'46153元/m²',
-    area:'65平方米'
+//findByValue({
+//    price:'46153元/m²',
+//    area:'65平方米'
+//})
+
+//count();
+conn.set('debug',true);
+var kittySchema=conn.Schema({
+    name:String,
+    books:[String]
+})
+
+//var Kitten=conn.model('Kitten',kittySchema);
+//var silence=new Kitten({name:'silent'});
+//console.log(silence.name)
+/**
+ * 实例方法
+ */
+kittySchema.methods.speak= function () {
+    var greeting=this.name?'the name is '+this.name:'i do not have a name';
+    console.log(greeting);
+}
+/**
+ * 静态方法
+ * @param name
+ * @param cb
+ */
+kittySchema.statics.findByName= function (name,cb) {
+    this.find({name:new RegExp(name,'i')},cb);
+}
+var Kitten=conn.model('Kitten',kittySchema);
+//var silence=new Kitten({name:'liqiang',books:['1','2','3']});
+//silence.save(function (err,data) {
+//    silence.speak()
+//})
+
+Kitten.find({name:'liqiang'},function (err,alls) {
+    var li=alls[0];
+    li.books[0]='44444';
+    li.save();
+    setTimeout(function () {
+        console.log(alls)
+    })
+
 })
