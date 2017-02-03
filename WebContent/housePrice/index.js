@@ -153,8 +153,8 @@ function sendMail(){
     var transporter=nodemailer.createTransport(smtpConfig)
     var opts={
         from:authInfo.getFullUsername(),
-        to:'licumt217@126.com',
-        subject:'nodeJs邮件系统测试',
+        to:'447818666@qq.com',
+        subject:'链家昌平二手房价',
         text:'纯文本',
         //html:'<h1 style="color:red">html文本h1🐴</h1>',
         html: 'Embedded image: <img src="cid:unique@kreata.ee"/>',

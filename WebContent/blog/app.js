@@ -40,7 +40,8 @@ app.all('/user/:username', function (req,res,next) {
     if(users[req.params.username]){
         next();
     }else{
-        next(new Error(req.params.username+' not exists'))
+        //next(new Error(req.params.username+' not exists'))
+        res.send(req.params.username+' not exists')
     }
 })
 app.get('/user/:username', function (req,res,next) {

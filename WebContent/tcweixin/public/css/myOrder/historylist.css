@@ -1,0 +1,81 @@
+.historyOrder{
+	width:90%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 1.2em;
+    background:url("../../common/images/list_form_bg_history.png") no-repeat;
+    background-size:100% 100%;
+    position:relative;
+}
+.history img{
+	height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:70px;
+}
+
+.historycarnumber{
+    height: 40px;
+    width: 9em;
+    background: url("../../common/images/list_form_card.png");
+    background-size: 100% 100%;
+    margin: 0 auto 1em auto;
+}
+.historycarnumber p{
+    line-height: 40px;
+    text-align: center;
+    font-size:14px;
+}
+.history_time{
+	line-height:2em;
+    float:left;
+    padding-left:35px;
+    font-size: 14px;
+    color:#787878;
+    display:inline-block;
+}
+.historypakking{
+    line-height:2em;
+    float:right;
+    padding-right:20px;
+    font-size: 14px;
+    color:#787878;
+    display:inline-block;
+}
+.history_main{
+	height:100px;
+	width:98%;
+
+	margin:3em auto 0 auto;
+}
+
+.historymain_time{
+    width: 45%;
+    text-align: left;
+    color: #787878;
+    line-height: 2em;
+    padding-left: 5%;
+    padding-top: 5px;
+    float: left;
+    font-size: 14px;
+}
+.history_main_money{
+	  height: 90px;
+	  width: 44%;
+	  line-height: 5em;
+	  padding-top: 10px;
+	  float: right;
+	  padding-left: 4%; 
+      font-size:14px;
+      text-align: center;
+      
+}
+.history_main_money p{
+	font-size:30px;
+	color:#fd5958;
+}
+.history_main_money p span{
+ color: #787878;
+ font-size:16px;
+ }

@@ -1,0 +1,18 @@
+{
+  "name": "bjlianjia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.14.1",
+    "node-schedule": "^1.2.0",
+    "nodemailer": "^2.6.4",
+    "superagent": "^3.4.1"
+  }
+}

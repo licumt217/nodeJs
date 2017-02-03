@@ -1,0 +1,118 @@
+body{
+    background: #f5f8f9;
+}
+.parkInfo{
+    height: 7em;
+    width: 100%;
+    background: #f5f8f9;
+    border-bottom: solid 1px #E0E0E0;
+    text-align: center;
+}
+.parkInfo h1{
+    font-weight: normal;
+    line-height: 45px;
+    color: #333333;
+    padding-top: 1em;
+}
+.parkInfo p{
+    color: #333333;
+    font-size: 12px;
+}
+.parkInfo p span:first-child{
+    font-size: 27px;
+    color:#fd5958;
+}
+.parkInfo p span{
+    margin: 0 1px;
+}
+.carnumber{
+    height: 6em;
+    border-bottom: solid 1px #E0E0E0;
+    background: #FFFFFF;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.carnumber ul{
+    float: left;
+    width: 50%;
+    height:5em;
+    padding-top: 1em;
+    background: url("../images/orderline.png") no-repeat center right;
+    text-align: center;
+}
+.carnumber ul:nth-child(2){
+    background: none;
+}
+.carnumber ul li{
+    line-height: 32px;
+}
+.carnumber ul li:first-child{
+    color: #cccccc;
+}
+.carnumber ul li:nth-child(2){
+    color: #787878;
+    font-size: 23px;
+}
+.detail{
+    border-top: solid 1px #E0E0E0;
+    border-bottom: solid 1px #E0E0E0;
+    width: 100%;
+    padding: 1em 0;
+    display: none;
+}
+.detail ul li{
+     line-height: 26px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.detail ul li span:first-child{
+    text-align: left;
+}
+.detailname{
+    padding-left: 3.5em;
+}
+.detailnumber{
+    float: right;
+    padding-right: 3.5em;
+}
+.detail ul:nth-child(2) li{
+    color: #febc4b;
+}
+.detail ul:nth-child(2) li a{
+    color: #febc4b;
+}
+.payment{
+    width:90%;
+    margin: 1em auto;
+    text-align: center;
+}
+.cashmoney{
+    border: none;
+    width:45%;
+    height:40px;
+    line-height: 45px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 17px;
+    outline: none;
+    background: #febc4b;
+    font-family: "microsoft yahei";
+    margin-right: 0.5em;
+}
+.online{
+    border: none;
+    width: 45%;
+    height:40px;
+    line-height: 45px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 17px;
+    outline: none;
+    background: #4bc1cd;
+    font-family: "microsoft yahei";
+}
+
+.online:active{
+    background: #4ea8b1;
+}

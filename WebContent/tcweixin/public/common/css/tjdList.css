@@ -1,0 +1,34 @@
+.tjdList{
+    height:auto;
+    width:100%;
+    border-bottom:solid 1px #e1e1e1;
+    margin-top: 10px;
+}
+.tjdList a{
+    width: 100%;
+    display: block;
+    background: #fff;
+
+}
+.tjdList li{
+    background: url("../../common/images/li.png") no-repeat center right 1em;
+    width: 97%;
+    line-height:50px;
+    font-size: 14px;
+    border-bottom: solid 1px #e1e1e1;
+    margin-left: 3%;
+    height: 50px;
+    background-size: 2%;
+}
+.tjdListNoBorder{
+    border:none!important;
+}
+.tjdList li span{
+    width:85%;
+    display:block;
+    float:right;
+}
+.tjdList li img{
+    padding:15px 0 10px 6px;
+    width:28px;
+}
