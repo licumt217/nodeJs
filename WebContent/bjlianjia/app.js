@@ -39,6 +39,9 @@ function getQueryUrl(curPage){
  */
 function sendMail(content){
 
+
+    console.log(content);
+
     var authInfo={
         username:'447818666',
         password:'liqianghello',
@@ -62,11 +65,12 @@ function sendMail(content){
         subject:'链家昌平二手房价',
         text:content,
         //html:'<h1 style="color:red">html文本h1🐴</h1>',
-        html: 'Embedded image: <img src="cid:unique@kreata.ee"/>',
+        html: content,
+        //html: 'Embedded image: <img src="cid:unique@kreata.ee"/>',
         attachments:[
             {
                 filename:'text1.txt',
-                content:'hello world'
+                content:content
             },
             {
                 filename: 'i am name',//显示图片。。。
@@ -110,7 +114,7 @@ function doTask(){
          */
         function execSchedule(){
             var date=new Date(2016,9,23,23,56,1);
-            var str='0 0 0 * * *';
+            var str='0 04 12 * * *';
             //
             console.log('准备执行定时任务。。。')
             schedule.scheduleJob(str, function () {
@@ -165,8 +169,8 @@ function doTask(){
                     if(curPage<totalPage){
                         fetch(++curPage);
                     }else{
-                        var str=handleResult(handleResult,total);
-                        sendMail(str);
+                        var str=handleResult(result,total);
+                        sendMail(str);//将发送邮件的内容格式化一下
                         res.send(str);
                         console.log('抓取完毕！！！')
                     }

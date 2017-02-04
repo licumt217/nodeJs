@@ -7,7 +7,14 @@ block content
             p 请验证手机让您享受停简单更多服务
             dl
                 dt
-                    input(type="tel" placeholder="手机号" id="phone" v-on:keyup="validatePhone()" v-model="phone" maxlength="11")
+                    input(
+                        type="tel"
+                        placeholder="手机号"
+                        id="phone"
+                        v-on:keyup="validatePhone()"
+                        v-model="phone"
+                        maxlength="11"
+                    )
                 dd
                     span(id="btnCode" v-on:touchend="getYzm($event)"  class="inactive_yzm" v-bind:class="{'inactive_yzm':!isEnableYzm,'active_yzm':isEnableYzm}") 验证
             p
