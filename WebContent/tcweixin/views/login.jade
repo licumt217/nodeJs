@@ -1,0 +1,39 @@
+extends layout
+block content
+    link(rel="stylesheet" href="/css/login.css?v1.0")
+    section
+        div
+            用户名：
+            input(
+                type="tel"
+                placeholder="手机号"
+                id="phone"
+                maxlength="11"
+                )
+            span(
+                id="getYzm"
+                onclick="getYzm()"
+                class="inactive_yzm"
+                )  获取验证码
+
+        div
+            验证码：
+            input(
+                id="yzm"
+                placeholder="验证码"
+                maxlength="4"
+                )
+        div.loginContainer
+            input(
+                type="button"
+                value="登录"
+                id="login"
+                onclick="login()"
+                )
+
+    script(src='/js/login.js?rev=@@hash1')
+
+
+
+
+

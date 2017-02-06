@@ -1,0 +1,40 @@
+extends layout
+block content
+    link(rel="stylesheet" href="/css/home.css?v1.0")
+    section
+        h1
+            我的汽车:
+        div.cars
+
+        div
+            input(
+                type="button"
+                id="logout"
+                value="退出"
+                onclick="logout()"
+            )
+            input(
+                type="button"
+                id="addUser"
+                value="addUser"
+                onclick="addUser()"
+            )
+            input(
+                type="button"
+                id="updateUser"
+                value="updateUser"
+                onclick="updateUser()"
+            )
+            input(
+                type="button"
+                id="deleteUser"
+                value="deleteUser"
+                onclick="deleteUser()"
+            )
+    script(src='/js/jquery-1.8.3.js?rev=@@hash1')
+    script(src='/js/home.js?rev=@@hash1')
+
+
+
+
+
