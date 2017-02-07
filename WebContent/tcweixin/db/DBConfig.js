@@ -3,6 +3,7 @@
  */
 module.exports={
     mysql:{
+        //connectionLimit : 10,
         host:'172.16.2.7',
         user:'tjd',
         password:'pOIIgSVs3t',
