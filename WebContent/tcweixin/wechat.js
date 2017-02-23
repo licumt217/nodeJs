@@ -13,7 +13,9 @@ var schedule=require('node-schedule');
 function getOpenIdsUrl(token){
     return 'https://api.weixin.qq.com/cgi-bin/user/get?access_token='+token;
 }
-
+function getSilentMsg(){
+    return "亲爱的女王陛下，今天是阳光明媚的一天，希望你开开心心，笑靥如花。抱抱^_^";
+}
 function getWechatToken(){
     var url='http://test.tingjiandan.com/wxcontrol/wechatPublic/findWechatToken';
     superagent.get(url, function (err,data) {
@@ -25,7 +27,8 @@ function getWechatToken(){
             var total=data.total;
 
             console.log('测试线公众号总关注人数：'+total)
-            sendTemplateMsg('停简单微信公众号测试线关注人数总和：'+total);
+            sendTemplateMsg(getSilentMsg());
+            //sendTemplateMsg('停简单微信公众号测试线关注人数总和：'+total);
         });
     });
 }
@@ -36,12 +39,14 @@ function getWechatToken(){
  */
 function sendTemplateMsg(msg){
     var url='http://test.tingjiandan.com/wxcontrol/tcmpush/sendWechatMsg';
+    var liqOpenId='oyaEAt50pCVmHcxNDJ8s43aZY7AU';
+    var silentOpenId='oyaEAt-NoMA51MikANa6boPE-OAk';
     var obj={
         "msgType":"template",
         "platform" : "weixin",
         "commonMsg" : msg,
         "common" : "weixin",
-        "openId" : "oyaEAt50pCVmHcxNDJ8s43aZY7AU",
+        "openId" : silentOpenId,
         "dateSk" : "20160919",
         "templateName" : "common"
 
@@ -54,7 +59,7 @@ function sendTemplateMsg(msg){
  * 执行定时任务
  */
 function execSchedule(){
-    var str='0 25 * * * *';
+    var str='0 20 8 * * *';
     //
     console.log('准备执行定时任务。。。')
     schedule.scheduleJob(str, function () {
