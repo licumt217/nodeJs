@@ -69,27 +69,27 @@ function queryRealData(){
             var ul=$("#content");
 
 
-            药材名称：bt
-            图片：tp
-            拼音：py
-            英文名：ywm
-            别名：bm
-            出处：cc
-            来源：ly
-            原形态：yxt
-            生境分部：sjfb
-            性状:xz
-            鉴别：jb
-            含量测定：hlcd
-            性味：xw
-            归经：gj
-            功能主治：gnzz
-            用法用量：yfyl
-            复方：ff
-            注意：zy
-            贮藏：zc
-            各家论述:gjls
-            摘录：zl
+            // 药材名称：bt
+            // 图片：tp
+            // 拼音：py
+            // 英文名：ywm
+            // 别名：bm
+            // 出处：cc
+            // 来源：ly
+            // 原形态：yxt
+            // 生境分部：sjfb
+            // 性状:xz
+            // 鉴别：jb
+            // 含量测定：hlcd
+            // 性味：xw
+            // 归经：gj
+            // 功能主治：gnzz
+            // 用法用量：yfyl
+            // 复方：ff
+            // 注意：zy
+            // 贮藏：zc
+            // 各家论述:gjls
+            // 摘录：zl
 
 
 
