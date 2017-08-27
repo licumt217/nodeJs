@@ -11,6 +11,12 @@ let user997={
     name:'997540358',
     pass:'fobkhtjguzzdbdjc'
 }
+let user742={
+    name:'742082413',
+    pass:'vwqsywadrlbgbfei'
+}
+
+
 
 
 // 2017.9.7号邮箱可用
@@ -40,7 +46,7 @@ let user997={
 
 
 
-util.sendMail(user447.name,user447.pass,1);
+util.sendMail(user742.name,user742.pass,1);
 
 
 
