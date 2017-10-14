@@ -1,139 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
-    <title>Silent</title>
-    <style>
-        body{
-            background: black;
-
-
-        }
-        @keyframes rotate-frame {
-            0% {
-                transform: rotateX(0deg) rotateY(0deg);
-            }
-            10% {
-                transform: rotateX(0deg) rotateY(180deg);
-            }
-            20% {
-                transform: rotateX(-180deg) rotateY(180deg);
-            }
-            30% {
-                transform: rotateX(-360deg) rotateY(180deg);
-            }
-            40% {
-                transform: rotateX(-360deg) rotateY(360deg) ;
-            }
-            50% {
-                transform: rotateX(-180deg) rotateY(360deg) ;
-            }
-            60% {
-                transform: rotateX(90deg) rotateY(180deg)  ;
-            }
-            70% {
-                transform: rotateX(0) rotateY(180deg)  ;
-            }
-            80% {
-                transform: rotateX(90deg) rotateY(90deg) ;
-            }
-            90% {
-                transform: rotateX(90deg) rotateY(0) ;
-            }
-            100% {
-                transform: rotateX(0) rotateY(0)  ;
-            }
-        }
-        .my-container {
-            width: 1000px;
-            height: 500px;
-            margin: 0 auto;
-        }
-        .rect-wrap {
-            position: relative;
-            perspective: 1600px;
-        }
-        .container {
-            width: 800px;
-            height: 800px;
-            transform-style: preserve-3d;
-            transform-origin: 50% 50% 200px;
-            animation: rotate-frame 30s linear infinite;
-        }
-        .slide {
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            text-align: center;
-            line-height: 400px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.9) inset;
-            background: pink;
-        }
-        .top {
-            left: 200px;
-            top: -200px;
-            background-size: 100%;
-            transform: rotateX(-90deg);
-            transform-origin: bottom;
-            background: url(images/1.jpg) no-repeat;
-            background-size: 100% 100%;
-        }
-        .bottom {
-            left: 200px;
-            bottom: -200px;
-            transform: rotateX(90deg);
-            transform-origin: top;
-            background: url(images/7.jpg) no-repeat;
-            background-size: 100% 100%;
-        }
-        .left {
-            left: -200px;
-            top: 200px;
-            transform: rotateY(90deg);
-            transform-origin: right;
-            background: url(images/3.jpg) no-repeat;
-            background-size: 100% 100%;
-        }
-        .right {
-            left: 600px;
-            top: 200px;
-            transform: rotateY(-90deg);
-            transform-origin: left;
-            background: url(images/8.jpg) no-repeat;
-            background-size: 100% 100%;
-        }
-        .front {
-            left: 200px;
-            top: 200px;
-            transform: translateZ(400px);
-            background: url(images/9.jpg) no-repeat;
-            background-size: 100% 100%;
-        }
-        .back {
-            left: 200px;
-            top: 200px;
-            transform: translateZ(0);
-            background: url(images/6.jpg) no-repeat;
-            background-size: 100% 100%;
-        }
-        .wordsP{
-            position: absolute;
-            bottom: 5em;
-            width: 100%;
-            text-align: center;
-            height: 100px;
-        }
-        .words{
-            position: absolute;
-            bottom:5em;
-            text-align: center;
-            text-shadow:5px 5px 5px red;
-            color:#FFF;
-            font-size: 3.6em;
-            padding-left:0.2em;
-        }
-    </style>
+    <title>Happy Wedding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection"content="telephone=no, email=no" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="browsermode" content="application">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body class="body">
@@ -151,8 +38,12 @@
     </div>
     <div class="wordsP">
         <p class="words">
-            You are the most perfect girl in the universe!
+            My very best wishes to you for a lifetime of happiness
         </p>
+    </div>
+    <div class="audio">
+        <audio autoplay="autoplay" src="./audio/sunsine.mp3">
+        </audio>
     </div>
 </body>
 
