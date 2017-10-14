@@ -24,7 +24,36 @@ var request = require('request');
 
 // validateRuleAll();
 
-forecast();
+// forecast();
+
+
+
+let file = "./data/codes.json";
+let codesArray = JSON.parse(fs.readFileSync(file));
+console.log('len:' + codesArray.length)
+let realResult = []
+let newArray=[];
+for (let i = 0; i < codesArray.length; i++) {
+    let filename=codesArray[i];
+    let file = "./data/json/" + filename + ".json";
+
+    try {
+        let dataArray = JSON.parse(fs.readFileSync(file));
+    } catch (err) {
+        continue;
+    }
+    newArray.push(filename);
+
+
+}
+console.log('len:' + newArray.length)
+fs.writeFile('./data/codes.json', JSON.stringify(newArray), 'utf-8', function (err) {
+});
+
+
+
+
+
 
 /**
  * 明日预测
@@ -263,7 +292,7 @@ function updateByCode(code) {
                     let file = "./data/json/" + code + ".json";
                     let dataArray = JSON.parse(fs.readFileSync(file));
                     console.log(jsonObj)
-                    dataArray.push(jsonObj)
+                    dataArray.unshift(jsonObj)
                     fs.writeFile('./data/json/' + code + '.json', JSON.stringify(dataArray), 'utf-8', function (err) {
                     });
 
