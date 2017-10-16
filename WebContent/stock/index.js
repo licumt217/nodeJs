@@ -24,34 +24,35 @@ var request = require('request');
 
 // validateRuleAll();
 
-// forecast();
+forecast();
 
 
+/**
+ * codes文件中移除不存在的codes
+ */
+function removeUnexistCodes() {
+    let file = "./data/codes.json";
+    let codesArray = JSON.parse(fs.readFileSync(file));
+    console.log('len:' + codesArray.length)
+    let realResult = []
+    let newArray=[];
+    for (let i = 0; i < codesArray.length; i++) {
+        let filename=codesArray[i];
+        let file = "./data/json/" + filename + ".json";
 
-let file = "./data/codes.json";
-let codesArray = JSON.parse(fs.readFileSync(file));
-console.log('len:' + codesArray.length)
-let realResult = []
-let newArray=[];
-for (let i = 0; i < codesArray.length; i++) {
-    let filename=codesArray[i];
-    let file = "./data/json/" + filename + ".json";
+        try {
+            let dataArray = JSON.parse(fs.readFileSync(file));
+        } catch (err) {
+            continue;
+        }
+        newArray.push(filename);
 
-    try {
-        let dataArray = JSON.parse(fs.readFileSync(file));
-    } catch (err) {
-        continue;
+
     }
-    newArray.push(filename);
-
-
+    console.log('len:' + newArray.length)
+    fs.writeFile('./data/codes.json', JSON.stringify(newArray), 'utf-8', function (err) {
+    });
 }
-console.log('len:' + newArray.length)
-fs.writeFile('./data/codes.json', JSON.stringify(newArray), 'utf-8', function (err) {
-});
-
-
-
 
 
 
@@ -111,48 +112,79 @@ function forecastDetail(filename,i) {
         let t_2 = dataArray[i + 2]
         let t_1 = dataArray[i + 1]
 
-
+        let t_array=[t_1,t_2,t_3,t_4,t_5,t_6,t_7,t_8,t_9,t_10,t_11]
 
         let maxObj = null;
-        let upAmount = 5;
+        let upAmount = 7;
+        let maxIndex=-1;
         if (t_1.percent > upAmount) {
             maxObj = t_1;
+            maxIndex=1;
         } else if (t_2.percent > upAmount) {
             maxObj = t_2;
+            maxIndex=2;
         } else if (t_3.percent > upAmount) {
             maxObj = t_3;
+            maxIndex=3;
         } else if (t_4.percent > upAmount) {
             maxObj = t_4;
+            maxIndex=4;
         } else if (t_5.percent > upAmount) {
             maxObj = t_5;
+            maxIndex=5;
         } else if (t_6.percent > upAmount) {
             maxObj = t_6;
+            maxIndex=6;
         } else if (t_7.percent > upAmount) {
             maxObj = t_7;
+            maxIndex=7;
         } else if (t_8.percent > upAmount) {
             maxObj = t_8;
-        } else if (t_9.percent > upAmount) {
+            maxIndex=8;
+        }else if (t_9.percent > upAmount) {
             maxObj = t_9;
-        } else if (t_10.percent > upAmount) {
+            maxIndex=9;
+        }else if (t_10.percent > upAmount) {
             maxObj = t_10;
-        } else if (t_11.percent > upAmount) {
+            maxIndex=10;
+        }else if (t_11.percent > upAmount) {
             maxObj = t_11;
+            maxIndex=11;
         }
+        if(maxIndex<3){
+            maxObj=null;
+        }
+
+        function isAllSizeLess() {
+            let result=true;
+            for(let i=0;i<maxIndex-1;i++){
+                if(t_array[i].size>(maxObj.size*0.8)){
+                    result=false;
+                    break;
+                }
+            }
+            if((t_array[0]>maxObj.size*0.45)){
+                result=false;
+            }
+            return result;
+        }
+
+        function isPriceGood() {
+            let result=false;
+            let thePrice=t_array[0].endPrice-maxObj.beginPrice;
+            let theOldPrice=maxObj.endPrice-maxObj.beginPrice;
+            if(Math.abs(t_array[0].percent)<2 && t_array[0].endPrice<maxObj.endPrice && t_array[0].beginPrice>maxObj.beginPrice && (thePrice/theOldPrice)<0.65){
+                result=true;
+            }
+            return result;
+        }
+
 
 
         if (maxObj) {
 
-            if ((todayData.endPrice - maxObj.beginPrice) < ((maxObj.endPrice - maxObj.beginPrice) / 1.8)
-                && (todayData.endPrice - maxObj.beginPrice) > ((maxObj.endPrice - maxObj.beginPrice) / 9)
-                && todayData.endPrice < maxObj.endPrice
-                && isRed(todayData)
-            ) {
 
-                if(filename=='600231'){
-                    console.log(todayData);
-                    console.log(maxObj)
-                }
-                // console.log(filename+" "+(todayData.endPrice - maxObj.beginPrice)+" "+((maxObj.endPrice - maxObj.beginPrice) / 1.8))
+            if (isAllSizeLess() && isPriceGood()) {
                 result=filename;
             }
         }
@@ -184,15 +216,15 @@ function validateRuleAll() {
                 let next_1_Data = dataArray[targetIndex - 1]
                 let next_2_Data = dataArray[targetIndex - 2]
                 let next_3_Data = dataArray[targetIndex - 3]
-                if (next_1_Data.percent > 0) {
-                    revenueArray.push(next_1_Data.percent)
-                    continue;
-                }
-                if (next_2_Data.percent > 0) {
-                    revenueArray.push(next_2_Data.percent)
-                    continue
-                }
-                revenueArray.push(next_3_Data.percent)
+                // if (next_1_Data.percent > 0) {
+                //     revenueArray.push(next_1_Data.percent)
+                //     continue;
+                // }
+                // if (next_2_Data.percent > 0) {
+                //     revenueArray.push(next_2_Data.percent+next_1_Data.percent)
+                //     continue
+                // }
+                revenueArray.push(next_1_Data.percent)
 
             }
             allRevenueArray.push(revenueArray)
@@ -378,19 +410,12 @@ function filterAnalysis(filename) {
     let greenC = 0;
     let balanceC = 0;
 
-    let myC = 0;
-    let upCount = 0;
-    let downCount = 0;
-
     let result = []
     for (let i = 11; i < dataArray.length - 12; i++) {
         all++;
 
-
+        // console.log(i)
         let todayData = dataArray[i];
-        let nextData = dataArray[i - 1];
-        let prevData = dataArray[i + 1];
-        let liangbi = todayData.size / prevData.size;
 
         if (todayData.percent > 0) {
             redC++;
@@ -412,49 +437,83 @@ function filterAnalysis(filename) {
         let t_2 = dataArray[i + 2]
         let t_1 = dataArray[i + 1]
 
-        let t_n_1 = dataArray[i - 1];
-        let t_n_2 = dataArray[i - 2];
-        let t_n_3 = dataArray[i - 3];
-        let t_n_4 = dataArray[i - 4];
-        let t_n_5 = dataArray[i - 5];
-        let t_n_6 = dataArray[i - 6];
-        let t_n_7 = dataArray[i - 7];
-
+        let t_array=[t_1,t_2,t_3,t_4,t_5,t_6,t_7,t_8,t_9,t_10,t_11]
 
         let maxObj = null;
-        let upAmount = 5;
+        let upAmount = 7;
+        let maxIndex=-1;
         if (t_1.percent > upAmount) {
             maxObj = t_1;
+            maxIndex=1;
         } else if (t_2.percent > upAmount) {
             maxObj = t_2;
+            maxIndex=2;
         } else if (t_3.percent > upAmount) {
             maxObj = t_3;
+            maxIndex=3;
         } else if (t_4.percent > upAmount) {
             maxObj = t_4;
+            maxIndex=4;
         } else if (t_5.percent > upAmount) {
             maxObj = t_5;
+            maxIndex=5;
         } else if (t_6.percent > upAmount) {
             maxObj = t_6;
+            maxIndex=6;
         } else if (t_7.percent > upAmount) {
             maxObj = t_7;
+            maxIndex=7;
         } else if (t_8.percent > upAmount) {
             maxObj = t_8;
-        } else if (t_9.percent > upAmount) {
+            maxIndex=8;
+        }else if (t_9.percent > upAmount) {
             maxObj = t_9;
-        } else if (t_10.percent > upAmount) {
+            maxIndex=9;
+        }else if (t_10.percent > upAmount) {
             maxObj = t_10;
-        } else if (t_11.percent > upAmount) {
+            maxIndex=10;
+        }else if (t_11.percent > upAmount) {
             maxObj = t_11;
+            maxIndex=11;
         }
+        if(maxIndex<3){
+            maxObj=null;
+        }
+
+        function isAllSizeLess() {
+            let result=true;
+            for(let i=0;i<maxIndex-1;i++){
+                if(t_array[i].size>(maxObj.size*0.8)){
+                    result=false;
+                    break;
+                }
+            }
+            if((t_array[1]>maxObj.size*0.45)){
+                result=false;
+            }
+            return result;
+        }
+
+        function isPriceGood() {
+            let result=false;
+            let thePrice=t_array[1].endPrice-maxObj.beginPrice;
+            let theOldPrice=maxObj.endPrice-maxObj.beginPrice;
+            if(Math.abs(t_array[1].percent)<2 && t_array[1].endPrice<maxObj.endPrice && t_array[1].beginPrice>maxObj.beginPrice && (thePrice/theOldPrice)<0.65){
+                result=true;
+            }
+            return result;
+        }
+
 
 
         if (maxObj) {
 
-            if ((todayData.endPrice - maxObj.beginPrice) < ((maxObj.endPrice - maxObj.beginPrice) / 1.8)
-                && (todayData.endPrice - maxObj.beginPrice) > ((maxObj.endPrice - maxObj.beginPrice) / 9)
-                && todayData.endPrice < maxObj.endPrice
-                && isRed(todayData)
-            ) {
+
+            if(isAllSizeLess()){
+                console.log("..................")
+            }
+
+            if (isAllSizeLess() && isPriceGood()) {
                 result.push({
                     data: todayData,
                     index: i
