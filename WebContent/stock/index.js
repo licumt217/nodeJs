@@ -4,7 +4,11 @@
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
+var iconv = require('iconv-lite');
 var request = require('request');
+
+var csv = require('csv');
+
 
 // transCsv2Json('600361')
 // transCsv2Json('600795')
@@ -24,7 +28,160 @@ var request = require('request');
 
 // validateRuleAll();
 
-forecast();
+// forecast();
+
+// transCsv2Json('silent')
+
+remove()
+
+/**
+ * codes文件中移除不存在的codes
+ */
+function remove() {
+    let file = "./data/json/aaa.json";
+    let dataArray = JSON.parse(fs.readFileSync(file));
+
+    let newArray=[];
+    let theArray=['云JJK789',
+        '台Y77771',
+        '台T66661',
+        '晋TTT999',
+        '云T66544',
+        '蒙S33444',
+        '津W22222',
+        '京MN7197',
+        '津FTYYUU',
+        '京TTTT01',
+        '京N92K90',
+        '京TTTT02',
+        '陕U66621',
+        '陕H67676',
+        '豫WWWWWW',
+        '陕U56K21',
+        '川EE666V',
+        '京Z12349',
+        '京MA7179',
+        '辽EEEE51',
+        '鲁YY6666',
+        '皖TR4545',
+        '晋YYY555',
+        '京RTTTTTT',
+        '贵FFD112',
+        '冀UUUUUU',
+        '云R33321',
+        '云D83332',
+        '豫ZXCV12',
+        '京FYHHNNN',
+        '京111112',
+        '陕E12332',
+        '冀Q12345',
+        '京N252H0',
+        '津111112',
+        '吉YYYYYYY',
+        '桂555555',
+        '湘222222',
+        '粤TN7777',
+        '甘Y66668',
+        '甘Y666U2',
+        '桂PL0900',
+        '京TTT777',
+        '晋BTT888',
+        '甘WW1111',
+        '晋U66666',
+        '冀T44546',
+        '闽44R445',
+        '陕J22221',
+        '辽678877',
+        '晋666776',
+        '鲁R43333',
+        '闽U66621',
+        '晋FFF123',
+        '蒙IIIIOO',
+        '鲁R66666',
+        '辽OOIIIO',
+        '鄂KKKKKK',
+        '豫E56788',
+        '京YYYY07',
+        '青FFD113',
+        '陕H33441',
+        '京YY7889',
+        '吉A77700',
+        '川A9XM02',
+        '京ERTTYY',
+        '蒙TTT222',
+        '蒙TTTUUU',
+        '京GHHHHH',
+        '闽D7865G',
+        '蒙F88877',
+        '蒙R25282',
+        '蒙R89990',
+        '湘112222',
+        '鄂FD9000',
+        '晋AAABBB',
+        '晋CD9990',
+        '藏000000',
+        '京E33444',
+        '陕T55321',
+        '豫K78787',
+        '陕YU6767',
+        '吉JJKK00',
+        '辽Y88880',
+        '豫R11111',
+        '辽YY1111',
+        '川A99999',
+        '晋U66663',
+        '贵DD5556',
+        '皖PPPPPP',
+        '津D33777',
+        '蒙A12345',
+        '川Q12345']
+
+    console.log('oright length:'+dataArray.length)
+    let str='';
+    for(let i=0;i<dataArray.length;i++){
+        if(!theArray.includes(dataArray[i].data2)){
+            newArray.push(dataArray[i])
+
+            // str+=(dataArray[i].data0+',')
+            // str+=(dataArray[i].data1+',')
+            // str+=(dataArray[i].data2+',')
+            // str+=(dataArray[i].data3+',')
+            // str+=(dataArray[i].data4+',')
+            // str+=(dataArray[i].data5+',')
+            // str+=(dataArray[i].data6+',')
+            // str+=(dataArray[i].data7+'\\n');
+
+
+
+
+
+
+        }
+    }
+
+    console.log('newArray length:'+newArray.length)
+
+
+    var json2csv = require('json2csv');
+    var fields = ['data0','data1','data2','data3','data4','data5','data6','data7'];
+    var csv = json2csv({ data: newArray, fields: fields });
+
+    fs.writeFile('fffffffffffffffffffffffff.csv', csv, function(err) {
+        if (err) throw err;
+        console.log('file saved');
+    });
+
+
+
+    // fs.writeFile('./data/result.csv', JSON.stringify(str), 'utf-8', function (err) {
+    // });
+
+
+
+
+
+
+}
 
 
 /**
@@ -690,13 +847,23 @@ function isGreen(data) {
  */
 function transCsv2Json(fileName) {
 
-    fs.readFile('./data/csv/' + fileName + '.csv', function (err, data) {
+    fs.readFile('./data/csv/' + fileName + '.csv', {encoding:'binary'},function (err, data) {
         if (err) {
             console.log(err.stack);
             return;
         }
         transCsv2Json(data)
     });
+
+
+
+
+    function getZh(val) {
+        var buf = new Buffer(val, 'binary');
+
+        var str = iconv.decode(buf, 'GBK');
+        return str;
+    }
 
     function transCsv2Json(data) {
         data = data.toString();
@@ -705,33 +872,46 @@ function transCsv2Json(fileName) {
         let fileName = '';
         for (let i = 1; i < rows.length - 1; i++) {
             let row = rows[i].split(",");
-            let code = String(row[1]).replace("'", '');
-            let beginPrice = Number(row[6]);
-            let endPrice = Number(row[3]);
-            let maxPrice = Number(row[4]);
-            let percent = Number(row[9]);
-            let size = Number(row[11]);
 
-            if (endPrice !== 0) {
-                fileName = code;
+
+
+            let data0 = getZh(row[0]);
+            let data1 = getZh(row[1]);
+            let data2 = getZh(row[2]);
+            let data3 = getZh(row[3]);
+            let data4 = getZh(row[4]);
+            let data5 = getZh(row[5]);
+            let data6 = getZh(row[6]);
+            let data7 = getZh(row[7]);
+
+            console.log(data1)
+            console.log(data2)
+            console.log(data3)
+
+
                 let jsonObj = {
-                    code: code,
-                    endPrice: endPrice,
-                    maxPrice: maxPrice,
-                    percent: percent,
-                    size: size,
-                    beginPrice: beginPrice,
+                    data0: data0,
+                    data1: data1,
+                    data2: data2,
+                    data3: data3,
+                    data4: data4,
+                    data5: data5,
+                    data6: data6,
+                    data7: data7,
                 }
 
                 table.push(jsonObj);
-            }
         }
 
-        fs.appendFileSync('./data/json/' + fileName + '.json', JSON.stringify(table), 'utf-8', function (err) {
+        fs.appendFileSync('./data/json/aaa.json', JSON.stringify(table), 'utf-8', function (err) {
         });
 
     }
 }
+
+
+
+
 
 
 
