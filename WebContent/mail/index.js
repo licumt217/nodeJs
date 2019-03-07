@@ -12,6 +12,11 @@ let user997={
     pass:'fobkhtjguzzdbdjc'
 }
 
+let user742={
+    name:'742082413',
+    pass:'cdrmcyqcawlgbbgd'
+}
+
 
 // 2017.9.7号邮箱可用
 // 3373256392
