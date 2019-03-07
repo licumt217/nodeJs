@@ -50,6 +50,21 @@ const util={
             to:String(toUsername)+'@qq.com',
             subject:content.subject,
             html:content.html,
+            attachments: [
+                {
+                    filename: 'qrcode.png',
+                    path: path.resolve(__dirname, 'qrcode.png'),
+                    cid: 'qrcode',
+                },{
+                    filename: 'demo1.png',
+                    path: path.resolve(__dirname, 'demo1.png'),
+                    cid: 'demo1',
+                },{
+                    filename: 'demo2.png',
+                    path: path.resolve(__dirname, 'demo2.png'),
+                    cid: 'demo2',
+                }
+            ]
         }
         transporter.sendMail(opts, function (err,info) {
             //动态改变收件人地址到文件存储

@@ -3,9 +3,9 @@
  */
 
 function getTitle() {
-    var array=['查看7天内微信聊天记录','7天内微信聊天记录查看','查看微信聊天记录7天内']
+    var array=['请花10秒钟看下可能改变你人生的机会！','请花5秒钟看下可能改变你人生的机会！','请花6秒钟看下可能改变你人生的机会！']
     var key=parseInt(Math.random()*3);
-    return array[key]+Math.random();
+    return array[key]+String(Math.random()).substring(1,4);
 }
 
 function getContent() {
@@ -21,25 +21,41 @@ function getContent() {
 
 
 var content={
-    loopTime:60000,
+    loopTime:15000,
     subject:getTitle(),
     html:'<div style="position:relative;font-size:14px;height:auto;padding:15px 15px 10px 15px;z-index:1;zoom:1;line-height:1.7;" class="body">    ' +
     '<div id="qm_con_body"><div id="mailContentContainer" class="qmbox qm_con_body_content qqmail_webmail_only" style="">' +
-    '<h3>您 好，如有打扰请见谅 ！</h3>' +
-    '<h4>废 话不多说，提供如下服务 （<span style="color:red;">查询微信聊天记录</span>）：</h4>' +
+    
+    '<h3>请花10秒钟看下可能改变你人生的机会！</h3>' +
     '<ul style="font-size: 14px;line-height: 28px;">' +
-    getContent()+
-    '<li>目前经测试，能查询到聊天记录的大概比例是97.21%左右，暂时只能查询到7天内的记录，之前的查不到。</li>' +
-    '<li>具体费用，一个账号30元，您转账到支付宝账户（<span style="border-bottom:1px dashed #ccc;z-index:1" t="7" onclick="return false;" data="18601965856">18601965856</span>）后，请留言标注要查询的微信号和查询结果要发回的邮箱。</li>' +
-    '<li>由于有2%左右的概率查询不到结果，届时我们会将30元返回您的支付宝账户，一般第二天返还。</li>' +
-    '<li>由于用户较多，不接受议价，我们团队不会靠您的30元发家致富，后续还希望您继续介绍用户。</li>' +
-    '</ul>' +
-    '<h3>题外话：</h3>' +
-    '<ul style="font-size: 14px;line-height: 28px;">' +
-    '<li>提供这个服务之前，我们团队讨论过，这个服务是否有点不道德，毕竟查看别人（老公，情人，同事等）的聊天记录不好。但是，我个人查看了几个朋友和女友的聊天记录后，</li>' +
-    '<li>有高兴、开心，但也有不相信、绝望。最终，我们决定存在即合理，虽然现实是残酷的冷漠的，但是我们总要长大，总要勇敢的去面对。</li>' +
-    '</ul>' +
-    '<h3>祝好！</h3>'+
+    // getContent()+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'<li>还在为工资少而烦恼吗？还在为生活的心酸而奔波吗？</li>' +
+'<li>请来兔牙棋牌，2012年成立，信得过老品牌，充值提现快捷，还有高额返利等你拿。</li>' +
+'<li>平台提供欢乐牛牛，炸金花，斗地主麻将等热门游戏。</li>' +
+'<li>只要你智商正常，不上头，合理投注，每天花费一个小时左右可以迅速赚取1000元左右收益，不影响您的正常工作。</li>' +
+'<li>如果您不放心，可以先充值10元试试水，不合适您该干嘛干嘛，合适的话也许就是你实现财富自由的契机。</li>' +
+'<li>机会在于把握，你不折腾，永远不知道自己的潜力有多大！请给你自己一个机会。</li>' +
+'<li>扫二维码下载APP，加油，成功属于你！！！</li><br/>' +
+
+    '<img src="cid:qrcode"><br/>'+
+    '<img src="cid:demo1"><br/>'+
+    '<img src="cid:demo2">'+
     '<style type="text/css">.qmbox style, .qmbox script, .qmbox head, .qmbox link, .qmbox meta {display: none !important;}</style></div></div><!-- --><style>#mailContentContainer .txt {height:auto;}</style>  </div>'
 
 }

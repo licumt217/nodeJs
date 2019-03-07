@@ -1,5 +1,6 @@
 /node_modules
 node_modules/
+WebContent/stock/*
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
